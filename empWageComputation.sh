@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#! /bin/bash -x
 
 #constant
 IS_PRESENT_FULL_TIME=1
@@ -8,14 +8,15 @@ WAGE_PER_HR=20
 empCheck=$(( RANDOM%3 ))
 
 # selection
-case $empCheck in
-	$IS_PRESENT_FULL_TIME)
-		empHrs=8;;
-	$IS_PRESENT_HALF_TIME)
-		empHrs=4;;
-	*)echo Employee is Absent
-		empHrs=0;;
-esac
-
+if [ $empCheck -eq $IS_PRESENT_FULL_TIME ]
+then
+		empHrs=8
+elif [ $empCheck -eq $IS_PRESENT_HALF_TIME ]
+then
+                empHrs=4
+else
+		empHrs=0
+fi
+#calculation
 salary=$(( $empHrs * $WAGE_PER_HR ))
 echo $salary
