@@ -16,7 +16,7 @@ do
 		            empHrs=8
        elif [ $empCheck -eq $IS_PRESENT_HALF_TIME ]
        then
-                empHrs=4
+                            empHrs=4
        else
 		            empHrs=0
        fi
